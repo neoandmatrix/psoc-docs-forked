@@ -1,0 +1,31 @@
+name: Publish Release
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Generate Release Name
+        id: release_name
+        run: |
+          # Get the current date in the desired format
+          release_date=$(date +"%Y-%m-%d")
+          release_name="⚡ Release $release_date"
+          echo "Generated release name: $release_name"
+          
+          # Set the release name as an output
+          echo "::set-output name=name::$release_name"
+
+      - name: Create a Release
+        uses: elgohr/Github-Release-Action@v5
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: ${{ steps.release_name.outputs.name }}
+          tag_name: ${{ steps.release_name.outputs.name }}
