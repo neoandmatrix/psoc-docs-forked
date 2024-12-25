@@ -93,3 +93,41 @@ Admins have the ability to promote players to the role of umpire from a pool of 
 This allows them to assign umpires to matches as needed, ensuring the integrity of the game. The process of promoting players helps ensure that only qualified individuals are given umpiring responsibilities.
 
 This functionality is important for maintaining a smooth and organized system, with the flexibility for admins to manage match operations effectively. Further details on this process will be outlined in the documentation.
+
+# Statistics & Analysis
+### Scope of Analysis: 
+- Entity specific (Standings/Rankings/Stats): 
+	- Player
+	- Squad
+	- Tournament
+
+	These are the personal, team or tournament wise milestones, best-figures and records. They can be done season-wise or aggregating multiple seasons. 
+	
+- Metric specific:
+	- Player/branch performance in a league/playoffs/finals
+	- Face-offs (branch/player against a branch/player/player type)
+	- Overall tournament performance (across sports)
+	- Balls played, runs/goals scored, catches/dropped/missed, dots, maidens 
+# Scoring & Broadcast 
+
+### Match State
+
+A collection of variables defining the current status of the match, such as scores, wickets, overs, time elapsed, player positions, or ongoing penalties.
+
+### Delta
+
+A specific change or update in the match state, such as scoring a run, losing a wicket, or bowling an illegal delivery.
+
+### Event
+
+An occurrence in the match that may or may not alter the state, such as interruptions (rain delay), substitutions, milestones (end of an over, half-century), or a delta. Event is a super-set of delta.
+
+### Timeline
+
+A time series log of deltas, forming a chronological representation of match/player progress.
+
+### Match Formats
+
+Defined constraints for a match's variables, including duration (e.g., 20 overs, 90 minutes), rules for overs or sets (e.g., powerplay limits, number of legal deliveries), and tie-breaking schemes.
+
+They can be predefined templates or customized.
