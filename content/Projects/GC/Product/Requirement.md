@@ -114,13 +114,12 @@ This functionality is important for maintaining a smooth and organized system, w
 
 A collection of variables defining the current status of the match, such as scores, wickets, overs, time elapsed, player positions, or ongoing penalties.
 
-### Delta
+[See an example](Terminologies/MatchState)
+### Event
 
 A specific change or update in the match state, such as scoring a run, losing a wicket, or bowling an illegal delivery.
 
-### Event
-
-An occurrence in the match that may or may not alter the state, such as interruptions (rain delay), substitutions, milestones (end of an over, half-century), or a delta. Event is a super-set of delta.
+[See an example](Terminologies/MatchEvent)
 
 ### Timeline
 

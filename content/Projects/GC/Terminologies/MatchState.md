@@ -1,10 +1,9 @@
-A state is a set of variables that describe the current state of a match. They are governed by match format. 
+A state is a set of variables that describe the current state of a match. 
 
 Match state for cricket might look like this:
 
 ```javascript
 const matchState = {
-  State: {
     innings: {
       first: {
         battingTeam: "EEE",
@@ -68,6 +67,7 @@ const matchState = {
           ]
         },
         Bowling: {
+	      freeHit: false,
           bowler: {
             name: "Bowler1",
             overs: 1.5,
@@ -152,8 +152,7 @@ const matchState = {
       null, // run/wickets
       null // 32/4
     ]
-  }
-};
+  };
 
 ```
 
